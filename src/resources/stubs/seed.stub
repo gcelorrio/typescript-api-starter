@@ -1,0 +1,22 @@
+import * as Knex from 'knex';
+
+/**
+ * Seed :table table
+
+ * @param {Knex} knex - knex instance.
+ * @returns {Promise<number[] | number[][]>}
+ */
+export function seed(knex: Knex): Promise<number[] | number[][]> {
+  return knex('table_name')
+    .del()
+    .then(() => {
+      return Promise.all([
+        knex('table_name').insert([
+          {
+            colName: 'rowValue',
+            colName2: 'rowValue'
+          }
+        ])
+      ]);
+    });
+}
