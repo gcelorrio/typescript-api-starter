@@ -2,6 +2,9 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
+const migrationsDirectory = 'src/database/migrations';
+const seedsDirectory = 'src/database/seeds';
+
 module.exports = {
   development: {
     client: process.env.DB_CLIENT,
@@ -19,12 +22,12 @@ module.exports = {
       max: 10
     },
     migrations: {
-      directory: 'src/database/migrations',
+      directory: migrationsDirectory,
       tableName: 'migrations',
       stub: 'src/resources/stubs/migration.stub'
     },
     seeds: {
-      directory: 'src/database/seeds',
+      directory: seedsDirectory,
       stub: 'src/resources/stubs/seed.stub'
     }
   },
@@ -44,11 +47,11 @@ module.exports = {
       max: 10
     },
     migrations: {
-      directory: 'src/database/migrations',
+      directory: migrationsDirectory,
       tableName: 'migrations'
     },
     seeds: {
-      directory: 'src/database/seeds'
+      directory: seedsDirectory
     }
   },
   test: {
@@ -63,11 +66,11 @@ module.exports = {
       database: process.env.TEST_DB_NAME
     },
     migrations: {
-      directory: 'src/database/migrations',
+      directory: migrationsDirectory,
       tableName: 'migrations'
     },
     seeds: {
-      directory: 'src/database/seeds'
+      directory: seedsDirectory
     }
   }
 };
