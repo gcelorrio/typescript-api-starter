@@ -1,1 +1,10 @@
 node_modules
+build
+logs
+test
+.git
+.env
+.env.docker
+.github
+*.md
+
